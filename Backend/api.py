@@ -113,7 +113,7 @@ def signup(data: SignupRequest):
 @app.post("/login")
 def login(data: LoginRequest):
     try:
-        url = f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBChsCVFY6A897fCiVoWke0HXX4xC4MxU8"
+        url = f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key="
         payload = {
             "email": data.email,
             "password": data.password,
@@ -287,3 +287,4 @@ def update_session(session_id: str, data: UpdateSessionRequest, user_id: str = D
         return {"message": "Session updated successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
